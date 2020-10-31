@@ -1,0 +1,7 @@
+[2020-10-30 19:27:29,819] INFO [Broker id=2] Handling LeaderAndIsr request correlationId 3 from controller 0 for 3 partitions (state.change.logger)
+[2020-10-30 19:27:29,839] INFO [Broker id=2] Stopped fetchers as part of LeaderAndIsr request correlationId 3 from controller 0 epoch 3 as part of the become-leader transition for 1 partitions (state.change.logger)
+[2020-10-30 19:27:29,907] INFO [Broker id=2] Leader library-events-0 starts at leader epoch 0 from offset 0 with high watermark 0 ISR [2,1,0] addingReplicas [] removingReplicas []. Previous leader epoch was -1. (state.change.logger)
+[2020-10-30 19:27:29,937] INFO [Broker id=2] Follower library-events-1 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (state.change.logger)
+[2020-10-30 19:27:29,951] INFO [Broker id=2] Follower library-events-2 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (state.change.logger)
+[2020-10-30 19:27:29,952] INFO [Broker id=2] Stopped fetchers as part of become-follower request from controller 0 epoch 3 with correlation id 3 for 2 partitions (state.change.logger)
+[2020-10-30 19:27:29,967] INFO [Broker id=2] Add 3 partitions and deleted 0 partitions from metadata cache in response to UpdateMetadata request sent by controller 0 epoch 3 with correlation id 4 (state.change.logger)
