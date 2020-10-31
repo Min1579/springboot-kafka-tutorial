@@ -35,3 +35,4 @@ org.apache.kafka.common.errors.UnknownTopicOrPartitionException: This server doe
 [2020-11-01 02:08:51,227] INFO [GroupMetadataManager brokerId=1] Removed 0 expired offsets in 26 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
 [2020-11-01 02:18:51,220] INFO [GroupMetadataManager brokerId=1] Removed 0 expired offsets in 2 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
 [2020-11-01 02:28:51,231] INFO [GroupMetadataManager brokerId=1] Removed 0 expired offsets in 2 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-11-01 02:38:51,247] INFO [GroupMetadataManager brokerId=1] Removed 0 expired offsets in 3 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
