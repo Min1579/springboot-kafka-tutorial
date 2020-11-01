@@ -37,12 +37,12 @@ public class LibraryEventProducer {
 
         listenableFuture.addCallback(new ListenableFutureCallback<>() {
             @Override
-            public void onFailure(Throwable ex) {
+            public void onFailure(final Throwable ex) {
                 handleFailure(key, value, ex);
             }
 
             @Override
-            public void onSuccess(SendResult<Integer, String> result) {
+            public void onSuccess(final SendResult<Integer, String> result) {
                 handleSuccess(key, value, result);
             }
         });
@@ -59,12 +59,12 @@ public class LibraryEventProducer {
                 = kafkaTemplate.send(producerRecord);
         listenableFuture.addCallback(new ListenableFutureCallback<>() {
             @Override
-            public void onFailure(Throwable ex) {
+            public void onFailure(final Throwable ex) {
                 handleFailure(key, value, ex);
             }
 
             @Override
-            public void onSuccess(SendResult<Integer, String> result) {
+            public void onSuccess(final SendResult<Integer,String> result) {
                 handleSuccess(key, value, result);
             }
         });
@@ -76,10 +76,11 @@ public class LibraryEventProducer {
         return new ProducerRecord<>(topic, null, key, value, headers);
     }
 
-    public SendResult<Integer,String> sendLibraryEventSynchronous(LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
+    public SendResult<Integer,String> sendLibraryEventSynchronous(final LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
         final Integer key = libraryEvent.getLibraryEventId();
         final String value = objectMapper.writeValueAsString(libraryEvent);
         SendResult<Integer,String> sendResult = null;
+
         try {
             sendResult =  kafkaTemplate.sendDefault(key, value).get(2, TimeUnit.SECONDS);
         } catch (ExecutionException | InterruptedException e) {

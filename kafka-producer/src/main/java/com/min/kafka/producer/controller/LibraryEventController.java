@@ -6,10 +6,8 @@ import com.min.kafka.producer.domain.LibraryEventType;
 import com.min.kafka.producer.producer.LibraryEventProducer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.support.SendResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.ExecutionException;
@@ -23,7 +21,7 @@ public class LibraryEventController {
     private final LibraryEventProducer libraryEventProducer;
 
     @PostMapping("/v1/libraryevent")
-    public ResponseEntity<LibraryEvent> postLibraryEvent(@RequestBody LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
+    public ResponseEntity<LibraryEvent> postLibraryEvent(@RequestBody final LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
 
         //invoke kafka producer
         libraryEvent.setLibraryEventType(LibraryEventType.NEW);
@@ -36,7 +34,7 @@ public class LibraryEventController {
 
     //PUT
     @PutMapping("/v1/libraryevent")
-    public ResponseEntity<?> putLibraryEvent(@RequestBody LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException {
+    public ResponseEntity<?> putLibraryEvent(@RequestBody final LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException {
 
 
         if(libraryEvent.getLibraryEventId()==null){

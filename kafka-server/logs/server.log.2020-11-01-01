@@ -36,3 +36,7 @@ org.apache.kafka.common.errors.UnknownTopicOrPartitionException: This server doe
 [2020-11-01 02:18:51,220] INFO [GroupMetadataManager brokerId=1] Removed 0 expired offsets in 2 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
 [2020-11-01 02:28:51,231] INFO [GroupMetadataManager brokerId=1] Removed 0 expired offsets in 2 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
 [2020-11-01 02:38:51,247] INFO [GroupMetadataManager brokerId=1] Removed 0 expired offsets in 3 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-11-01 02:48:51,260] INFO [GroupMetadataManager brokerId=1] Removed 0 expired offsets in 3 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-11-01 02:49:48,041] INFO [GroupCoordinator 1]: Preparing to rebalance group library-events-listener-group in state PreparingRebalance with old generation 0 (__consumer_offsets-16) (reason: Adding new member consumer-library-events-listener-group-1-1f9a07d3-28ae-4a36-9ac1-70173ff23ae9 with group instance id None) (kafka.coordinator.group.GroupCoordinator)
+[2020-11-01 02:49:48,048] INFO [GroupCoordinator 1]: Stabilized group library-events-listener-group generation 1 (__consumer_offsets-16) (kafka.coordinator.group.GroupCoordinator)
+[2020-11-01 02:49:48,056] INFO [GroupCoordinator 1]: Assignment received from leader for group library-events-listener-group for generation 1 (kafka.coordinator.group.GroupCoordinator)
