@@ -17,5 +17,4 @@ public class AutoCreateConfiguration {
                 .replicas(3)
                 .build();
     }
-
 }
