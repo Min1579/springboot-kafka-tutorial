@@ -11,6 +11,7 @@ import org.springframework.dao.RecoverableDataAccessException;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
@@ -24,6 +25,7 @@ public class LibraryEventService {
     private final ObjectMapper objectMapper;
     private final LibraryEventRepository libraryEventsRepository;
 
+    @Transactional
     public void processLibraryEvent(final ConsumerRecord<Integer,String> consumerRecord) throws JsonProcessingException {
         final LibraryEvent libraryEvent = objectMapper.readValue(consumerRecord.value(), LibraryEvent.class);
         log.info("libraryEvent : {} ", libraryEvent);
